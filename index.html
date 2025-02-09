@@ -10,6 +10,9 @@
         code { background: #f4f4f4; padding: 2px 5px; }
         a { color: #0366d6; text-decoration: none; }
         a:hover { text-decoration: underline; }
+        pre { background: #f4f4f4; padding: 10px; border-radius: 5px; overflow-x: auto; }
+        h3 { margin-top: 20px; }
+        ul, ol { margin: 10px 0; padding-left: 20px; }
     </style>
 </head>
 <body>
@@ -27,16 +30,21 @@
         <h3>Step-by-Step Instructions</h3>
         <ol>
             <li><strong>Create an AWS Account</strong><br>
-                - Go to <a href="https://aws.amazon.com/free/" target="_blank">AWS Free Tier</a> and sign up.</li>
+                - Go to <a href="https://aws.amazon.com/free/" target="_blank">AWS Free Tier</a> and sign up.<br>
+                - Verify your email and set up billing alerts to avoid unexpected charges.</li>
             <li><strong>Launch an EC2 Instance</strong><br>
                 - Navigate to <strong>EC2 Dashboard → Launch Instance</strong>.<br>
-                - Choose <strong>Amazon Linux 2 AMI</strong>.<br>
+                - Choose <strong>Amazon Linux 2 AMI</strong> (free tier eligible).<br>
+                - Select <strong>t2.micro</strong> instance type.<br>
                 - Configure security groups to allow <strong>SSH (port 22)</strong> and <strong>HTTP (port 80)</strong>.<br>
-                - Connect via SSH: <br>
-                <code>ssh -i your-key.pem ec2-user@your-instance-public-ip</code></li>
+                - Download the key pair (<code>.pem</code> file) and save it securely.<br>
+                - Connect to the instance via SSH:<br>
+                <pre><code>ssh -i your-key.pem ec2-user@your-instance-public-ip</code></pre></li>
             <li><strong>Create an S3 Bucket</strong><br>
                 - Go to <strong>S3 Dashboard → Create Bucket</strong>.<br>
-                - Upload a file (e.g., <code>index.html</code>) and enable <strong>Static Website Hosting</strong>.</li>
+                - Choose a unique name (e.g., <code>my-learning-bucket</code>).<br>
+                - Enable <strong>Static Website Hosting</strong> under the bucket properties.<br>
+                - Upload a file (e.g., <code>index.html</code>) and make it publicly accessible.</li>
         </ol>
         <h3>Resources</h3>
         <ul>
@@ -54,20 +62,30 @@
         <h3>Step-by-Step Instructions</h3>
         <ol>
             <li><strong>Install Node.js</strong><br>
-                - Download from <a href="https://nodejs.org/" target="_blank">nodejs.org</a>.</li>
+                - Download and install Node.js from <a href="https://nodejs.org/" target="_blank">nodejs.org</a>.<br>
+                - Verify the installation:<br>
+                <pre><code>node -v
+npm -v</code></pre></li>
             <li><strong>Create a Simple HTTP Server</strong><br>
+                - Create a file named <code>server.js</code>:<br>
                 <pre><code>const http = require('http');
 const server = http.createServer((req, res) => {
   res.end('Hello, World!');
 });
-server.listen(3000, () => console.log('Server running on port 3000'));</code></pre></li>
+server.listen(3000, () => console.log('Server running on port 3000'));</code></pre>
+                - Run the server:<br>
+                <pre><code>node server.js</code></pre>
+                - Open your browser and navigate to <code>http://localhost:3000</code>.</li>
             <li><strong>Build a REST API with Express.js</strong><br>
-                - Install Express: <code>npm install express</code>.<br>
-                - Create a file <code>app.js</code>:<br>
+                - Install Express:<br>
+                <pre><code>npm install express</code></pre>
+                - Create a file named <code>app.js</code>:<br>
                 <pre><code>const express = require('express');
 const app = express();
 app.get('/', (req, res) => res.send('Hello, World!'));
-app.listen(3000, () => console.log('Server running on port 3000'));</code></pre></li>
+app.listen(3000, () => console.log('Server running on port 3000'));</code></pre>
+                - Run the app:<br>
+                <pre><code>node app.js</code></pre></li>
         </ol>
         <h3>Resources</h3>
         <ul>
@@ -85,6 +103,7 @@ app.listen(3000, () => console.log('Server running on port 3000'));</code></pre>
         <h3>Step-by-Step Instructions</h3>
         <ol>
             <li><strong>Create a Simple AngularJS App</strong><br>
+                - Create an <code>index.html</code> file:<br>
                 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html ng-app="myApp"&gt;
 &lt;head&gt;
@@ -99,7 +118,8 @@ app.listen(3000, () => console.log('Server running on port 3000'));</code></pre>
     });
   &lt;/script&gt;
 &lt;/body&gt;
-&lt;/html&gt;</code></pre></li>
+&lt;/html&gt;</code></pre>
+                - Open the file in your browser to see the app in action.</li>
         </ol>
         <h3>Resources</h3>
         <ul>
@@ -107,19 +127,100 @@ app.listen(3000, () => console.log('Server running on port 3000'));</code></pre>
         </ul>
     </details>
 
-    <!-- Add Days 7-30 following the same structure -->
-    <!-- Example for Day 7: Microservices Concepts -->
     <details>
         <summary><strong>Day 7: Microservices Concepts</strong></summary>
         <h3>Learning Goals</h3>
         <ul>
             <li>Understand microservices architecture and its benefits.</li>
         </ul>
+        <h3>Step-by-Step Instructions</h3>
+        <ol>
+            <li><strong>What are Microservices?</strong><br>
+                - Microservices are small, independent services that work together to form a larger application.<br>
+                - Each service handles a specific functionality (e.g., user authentication, payment processing).</li>
+            <li><strong>Benefits of Microservices</strong><br>
+                - Scalability: Scale individual services as needed.<br>
+                - Flexibility: Use different technologies for different services.<br>
+                - Fault Isolation: A failure in one service doesn’t affect others.</li>
+        </ol>
         <h3>Resources</h3>
         <ul>
             <li><a href="https://microservices.io/" target="_blank">Microservices.io</a></li>
             <li><a href="https://martinfowler.com/articles/microservices.html" target="_blank">Martin Fowler on Microservices</a></li>
         </ul>
     </details>
+
+    <!-- Phase 2: Backend & AWS EKS (Days 8-14) -->
+    <details>
+        <summary><strong>Day 8-9: AWS EKS Setup</strong></summary>
+        <h3>Learning Goals</h3>
+        <ul>
+            <li>Set up an EKS cluster and deploy a Node.js app.</li>
+        </ul>
+        <h3>Step-by-Step Instructions</h3>
+        <ol>
+            <li><strong>Install AWS CLI and eksctl</strong><br>
+                - Install AWS CLI: <a href="https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html" target="_blank">AWS CLI Installation</a>.<br>
+                - Install <code>eksctl</code>: <a href="https://eksctl.io/" target="_blank">eksctl Installation</a>.</li>
+            <li><strong>Create an EKS Cluster</strong><br>
+                - Run the following command:<br>
+                <pre><code>eksctl create cluster --name my-cluster --region us-east-1</code></pre>
+                - This will take 10-15 minutes to complete.</li>
+            <li><strong>Deploy a Node.js App</strong><br>
+                - Create a Kubernetes deployment file named <code>deployment.yaml</code>:<br>
+                <pre><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nodejs-app
+  template:
+    metadata:
+      labels:
+        app: nodejs-app
+    spec:
+      containers:
+      - name: nodejs-app
+        image: your-docker-image:latest
+        ports:
+        - containerPort: 3000</code></pre>
+                - Apply the deployment:<br>
+                <pre><code>kubectl apply -f deployment.yaml</code></pre></li>
+        </ol>
+        <h3>Resources</h3>
+        <ul>
+            <li><a href="https://docs.aws.amazon.com/eks/" target="_blank">AWS EKS Guide</a></li>
+        </ul>
+    </details>
+
+    <!-- Add Days 10-30 following the same structure -->
+    <!-- Example for Day 10-11: PostgreSQL on AWS -->
+    <details>
+        <summary><strong>Day 10-11: PostgreSQL on AWS</strong></summary>
+        <h3>Learning Goals</h3>
+        <ul>
+            <li>Set up PostgreSQL on AWS RDS and connect it to a Node.js app.</li>
+        </ul>
+        <h3>Step-by-Step Instructions</h3>
+        <ol>
+            <li><strong>Create an RDS Instance</strong><br>
+                - Go to <strong>RDS Dashboard → Create Database</strong>.<br>
+                - Choose <strong>PostgreSQL</strong> and configure the instance.<br>
+                - Set the master username and password.</li>
+            <li><strong>Connect to PostgreSQL</strong><br>
+                - Use a PostgreSQL client (e.g., <code>psql</code>) to connect to the database.<br>
+                - Create a table:<br>
+                <pre><code>CREATE TABLE users (id SERIAL PRIMARY KEY, name VARCHAR(50));</code></pre></li>
+        </ol>
+        <h3>Resources</h3>
+        <ul>
+            <li><a href="https://www.postgresql.org/docs/" target="_blank">PostgreSQL Documentation</a></li>
+            <li><a href="https://docs.aws.amazon.com/rds/" target="_blank">AWS RDS Guide</a></li>
+        </ul>
+    </details>
+
 </body>
 </html>
