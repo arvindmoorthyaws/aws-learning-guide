@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>30-Day AWS Full-Stack Guide</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: auto; }
+        details { margin: 10px 0; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+        summary { cursor: pointer; font-weight: bold; }
+        code { background: #f4f4f4; padding: 2px 5px; }
+        a { color: #0366d6; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>30-Day Guide: Full-Stack App on AWS with EKS, AngularJS, Node.js, and PostgreSQL</h1>
+    <p><strong>Hosted on GitHub Pages:</strong> Follow the daily steps below to learn AWS, AngularJS, Node.js, and microservices from scratch!</p>
+
+    <!-- Phase 1: Foundations (Days 1-7) -->
+    <details>
+        <summary><strong>Day 1-2: AWS Basics</strong></summary>
+        <h3>Learning Goals</h3>
+        <ul>
+            <li>Understand core AWS services: EC2, S3, IAM, VPC.</li>
+            <li>Launch an EC2 instance and create an S3 bucket.</li>
+        </ul>
+        <h3>Step-by-Step Instructions</h3>
+        <ol>
+            <li><strong>Create an AWS Account</strong><br>
+                - Go to <a href="https://aws.amazon.com/free/" target="_blank">AWS Free Tier</a> and sign up.</li>
+            <li><strong>Launch an EC2 Instance</strong><br>
+                - Navigate to <strong>EC2 Dashboard → Launch Instance</strong>.<br>
+                - Choose <strong>Amazon Linux 2 AMI</strong>.<br>
+                - Configure security groups to allow <strong>SSH (port 22)</strong> and <strong>HTTP (port 80)</strong>.<br>
+                - Connect via SSH: <br>
+                <code>ssh -i your-key.pem ec2-user@your-instance-public-ip</code></li>
+            <li><strong>Create an S3 Bucket</strong><br>
+                - Go to <strong>S3 Dashboard → Create Bucket</strong>.<br>
+                - Upload a file (e.g., <code>index.html</code>) and enable <strong>Static Website Hosting</strong>.</li>
+        </ol>
+        <h3>Resources</h3>
+        <ul>
+            <li><a href="https://docs.aws.amazon.com/ec2/" target="_blank">AWS EC2 Guide</a></li>
+            <li><a href="https://docs.aws.amazon.com/s3/" target="_blank">AWS S3 Guide</a></li>
+        </ul>
+    </details>
+
+    <details>
+        <summary><strong>Day 3-4: Node.js Basics</strong></summary>
+        <h3>Learning Goals</h3>
+        <ul>
+            <li>Learn Node.js fundamentals and build a REST API with Express.js.</li>
+        </ul>
+        <h3>Step-by-Step Instructions</h3>
+        <ol>
+            <li><strong>Install Node.js</strong><br>
+                - Download from <a href="https://nodejs.org/" target="_blank">nodejs.org</a>.</li>
+            <li><strong>Create a Simple HTTP Server</strong><br>
+                <pre><code>const http = require('http');
+const server = http.createServer((req, res) => {
+  res.end('Hello, World!');
+});
+server.listen(3000, () => console.log('Server running on port 3000'));</code></pre></li>
+            <li><strong>Build a REST API with Express.js</strong><br>
+                - Install Express: <code>npm install express</code>.<br>
+                - Create a file <code>app.js</code>:<br>
+                <pre><code>const express = require('express');
+const app = express();
+app.get('/', (req, res) => res.send('Hello, World!'));
+app.listen(3000, () => console.log('Server running on port 3000'));</code></pre></li>
+        </ol>
+        <h3>Resources</h3>
+        <ul>
+            <li><a href="https://nodejs.org/en/docs/" target="_blank">Node.js Documentation</a></li>
+            <li><a href="https://expressjs.com/" target="_blank">Express.js Guide</a></li>
+        </ul>
+    </details>
+
+    <details>
+        <summary><strong>Day 5-6: AngularJS Basics</strong></summary>
+        <h3>Learning Goals</h3>
+        <ul>
+            <li>Learn AngularJS fundamentals: directives, controllers, and data binding.</li>
+        </ul>
+        <h3>Step-by-Step Instructions</h3>
+        <ol>
+            <li><strong>Create a Simple AngularJS App</strong><br>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html ng-app="myApp"&gt;
+&lt;head&gt;
+  &lt;script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body ng-controller="myCtrl"&gt;
+  &lt;input ng-model="name" placeholder="Enter your name"&gt;
+  &lt;h1&gt;Hello, {{name}}!&lt;/h1&gt;
+  &lt;script&gt;
+    angular.module('myApp', []).controller('myCtrl', function($scope) {
+      $scope.name = 'World';
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></li>
+        </ol>
+        <h3>Resources</h3>
+        <ul>
+            <li><a href="https://angularjs.org/" target="_blank">AngularJS Documentation</a></li>
+        </ul>
+    </details>
+
+    <!-- Add Days 7-30 following the same structure -->
+    <!-- Example for Day 7: Microservices Concepts -->
+    <details>
+        <summary><strong>Day 7: Microservices Concepts</strong></summary>
+        <h3>Learning Goals</h3>
+        <ul>
+            <li>Understand microservices architecture and its benefits.</li>
+        </ul>
+        <h3>Resources</h3>
+        <ul>
+            <li><a href="https://microservices.io/" target="_blank">Microservices.io</a></li>
+            <li><a href="https://martinfowler.com/articles/microservices.html" target="_blank">Martin Fowler on Microservices</a></li>
+        </ul>
+    </details>
+
+    <!-- Continue adding Days 8-30 -->
+
+</body>
+</html>
