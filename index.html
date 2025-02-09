@@ -19,14 +19,19 @@
     <h1>30-Day Guide: Full-Stack App on AWS with EKS, AngularJS, Node.js, and PostgreSQL</h1>
     <p><strong>Hosted on GitHub Pages:</strong> Follow the daily steps below to learn AWS, AngularJS, Node.js, and microservices from scratch!</p>
 
-    <!-- Phase 1: Foundations (Days 1-7) -->
+    <!-- Day 1-2: AWS Basics -->
     <details>
         <summary><strong>Day 1-2: AWS Basics</strong></summary>
-        <h3>Learning Goals</h3>
+        <h3>What it means</h3>
+        <p>AWS (Amazon Web Services) is a cloud computing platform that provides services like virtual servers (EC2), storage (S3), and databases (RDS). Today, you'll learn the basics of AWS and set up your first EC2 instance and S3 bucket.</p>
+
+        <h3>What you should learn</h3>
         <ul>
-            <li>Understand core AWS services: EC2, S3, IAM, VPC.</li>
-            <li>Launch an EC2 instance and create an S3 bucket.</li>
+            <li>What is AWS and why is it used?</li>
+            <li>How to launch an EC2 instance (virtual server).</li>
+            <li>How to create and configure an S3 bucket (storage).</li>
         </ul>
+
         <h3>Step-by-Step Instructions</h3>
         <ol>
             <li><strong>Create an AWS Account</strong><br>
@@ -46,19 +51,27 @@
                 - Enable <strong>Static Website Hosting</strong> under the bucket properties.<br>
                 - Upload a file (e.g., <code>index.html</code>) and make it publicly accessible.</li>
         </ol>
-        <h3>Resources</h3>
-        <ul>
-            <li><a href="https://docs.aws.amazon.com/ec2/" target="_blank">AWS EC2 Guide</a></li>
-            <li><a href="https://docs.aws.amazon.com/s3/" target="_blank">AWS S3 Guide</a></li>
-        </ul>
+
+        <h3>Lab Instructions</h3>
+        <ol>
+            <li>Launch an EC2 instance and connect to it using SSH.</li>
+            <li>Create an S3 bucket and upload a file.</li>
+        </ol>
     </details>
 
+    <!-- Day 3-4: Node.js Basics -->
     <details>
         <summary><strong>Day 3-4: Node.js Basics</strong></summary>
-        <h3>Learning Goals</h3>
+        <h3>What it means</h3>
+        <p>Node.js is a runtime environment that allows you to run JavaScript on the server. It’s used to build scalable and fast backend applications. Today, you'll learn the basics of Node.js and build a simple REST API.</p>
+
+        <h3>What you should learn</h3>
         <ul>
-            <li>Learn Node.js fundamentals and build a REST API with Express.js.</li>
+            <li>What is Node.js and how does it work?</li>
+            <li>How to create a simple HTTP server.</li>
+            <li>How to build a REST API using Express.js.</li>
         </ul>
+
         <h3>Step-by-Step Instructions</h3>
         <ol>
             <li><strong>Install Node.js</strong><br>
@@ -87,19 +100,27 @@ app.listen(3000, () => console.log('Server running on port 3000'));</code></pre>
                 - Run the app:<br>
                 <pre><code>node app.js</code></pre></li>
         </ol>
-        <h3>Resources</h3>
-        <ul>
-            <li><a href="https://nodejs.org/en/docs/" target="_blank">Node.js Documentation</a></li>
-            <li><a href="https://expressjs.com/" target="_blank">Express.js Guide</a></li>
-        </ul>
+
+        <h3>Lab Instructions</h3>
+        <ol>
+            <li>Create a simple HTTP server using Node.js.</li>
+            <li>Build a REST API using Express.js.</li>
+        </ol>
     </details>
 
+    <!-- Day 5-6: AngularJS Basics -->
     <details>
         <summary><strong>Day 5-6: AngularJS Basics</strong></summary>
-        <h3>Learning Goals</h3>
+        <h3>What it means</h3>
+        <p>AngularJS is a JavaScript framework for building dynamic web applications. It allows you to create single-page applications (SPAs) with features like two-way data binding and dependency injection.</p>
+
+        <h3>What you should learn</h3>
         <ul>
-            <li>Learn AngularJS fundamentals: directives, controllers, and data binding.</li>
+            <li>What is AngularJS and how does it work?</li>
+            <li>How to create a simple AngularJS app.</li>
+            <li>How to use directives, controllers, and data binding.</li>
         </ul>
+
         <h3>Step-by-Step Instructions</h3>
         <ol>
             <li><strong>Create a Simple AngularJS App</strong><br>
@@ -121,18 +142,26 @@ app.listen(3000, () => console.log('Server running on port 3000'));</code></pre>
 &lt;/html&gt;</code></pre>
                 - Open the file in your browser to see the app in action.</li>
         </ol>
-        <h3>Resources</h3>
-        <ul>
-            <li><a href="https://angularjs.org/" target="_blank">AngularJS Documentation</a></li>
-        </ul>
+
+        <h3>Lab Instructions</h3>
+        <ol>
+            <li>Create a simple AngularJS app with two-way data binding.</li>
+        </ol>
     </details>
 
+    <!-- Day 7: Microservices Concepts -->
     <details>
         <summary><strong>Day 7: Microservices Concepts</strong></summary>
-        <h3>Learning Goals</h3>
+        <h3>What it means</h3>
+        <p>Microservices is an architectural style where an application is built as a collection of small, independent services. Each service handles a specific functionality and communicates with others via APIs.</p>
+
+        <h3>What you should learn</h3>
         <ul>
-            <li>Understand microservices architecture and its benefits.</li>
+            <li>What are microservices and why are they used?</li>
+            <li>How microservices differ from monolithic architecture.</li>
+            <li>Key benefits of microservices.</li>
         </ul>
+
         <h3>Step-by-Step Instructions</h3>
         <ol>
             <li><strong>What are Microservices?</strong><br>
@@ -143,20 +172,27 @@ app.listen(3000, () => console.log('Server running on port 3000'));</code></pre>
                 - Flexibility: Use different technologies for different services.<br>
                 - Fault Isolation: A failure in one service doesn’t affect others.</li>
         </ol>
-        <h3>Resources</h3>
-        <ul>
-            <li><a href="https://microservices.io/" target="_blank">Microservices.io</a></li>
-            <li><a href="https://martinfowler.com/articles/microservices.html" target="_blank">Martin Fowler on Microservices</a></li>
-        </ul>
+
+        <h3>Lab Instructions</h3>
+        <ol>
+            <li>Research and write down the differences between monolithic and microservices architecture.</li>
+        </ol>
     </details>
 
-    <!-- Phase 2: Backend & AWS EKS (Days 8-14) -->
+    <!-- Add Days 8-30 following the same structure -->
+    <!-- Example for Day 8-9: AWS EKS Setup -->
     <details>
         <summary><strong>Day 8-9: AWS EKS Setup</strong></summary>
-        <h3>Learning Goals</h3>
+        <h3>What it means</h3>
+        <p>AWS EKS (Elastic Kubernetes Service) is a managed Kubernetes service that allows you to run containerized applications. Kubernetes is a tool for automating deployment, scaling, and management of applications.</p>
+
+        <h3>What you should learn</h3>
         <ul>
-            <li>Set up an EKS cluster and deploy a Node.js app.</li>
+            <li>What is Kubernetes and why is it used?</li>
+            <li>How to set up an EKS cluster on AWS.</li>
+            <li>How to deploy a Node.js app on EKS.</li>
         </ul>
+
         <h3>Step-by-Step Instructions</h3>
         <ol>
             <li><strong>Install AWS CLI and eksctl</strong><br>
@@ -190,36 +226,14 @@ spec:
                 - Apply the deployment:<br>
                 <pre><code>kubectl apply -f deployment.yaml</code></pre></li>
         </ol>
-        <h3>Resources</h3>
-        <ul>
-            <li><a href="https://docs.aws.amazon.com/eks/" target="_blank">AWS EKS Guide</a></li>
-        </ul>
+
+        <h3>Lab Instructions</h3>
+        <ol>
+            <li>Set up an EKS cluster and deploy a Node.js app.</li>
+        </ol>
     </details>
 
-    <!-- Add Days 10-30 following the same structure -->
-    <!-- Example for Day 10-11: PostgreSQL on AWS -->
-    <details>
-        <summary><strong>Day 10-11: PostgreSQL on AWS</strong></summary>
-        <h3>Learning Goals</h3>
-        <ul>
-            <li>Set up PostgreSQL on AWS RDS and connect it to a Node.js app.</li>
-        </ul>
-        <h3>Step-by-Step Instructions</h3>
-        <ol>
-            <li><strong>Create an RDS Instance</strong><br>
-                - Go to <strong>RDS Dashboard → Create Database</strong>.<br>
-                - Choose <strong>PostgreSQL</strong> and configure the instance.<br>
-                - Set the master username and password.</li>
-            <li><strong>Connect to PostgreSQL</strong><br>
-                - Use a PostgreSQL client (e.g., <code>psql</code>) to connect to the database.<br>
-                - Create a table:<br>
-                <pre><code>CREATE TABLE users (id SERIAL PRIMARY KEY, name VARCHAR(50));</code></pre></li>
-        </ol>
-        <h3>Resources</h3>
-        <ul>
-            <li><a href="https://www.postgresql.org/docs/" target="_blank">PostgreSQL Documentation</a></li>
-            <li><a href="https://docs.aws.amazon.com/rds/" target="_blank">AWS RDS Guide</a></li>
-        </ul>
-    </details>
+    <!-- Continue adding Days 10-30 -->
+
 </body>
 </html>
